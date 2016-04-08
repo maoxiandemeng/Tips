@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.liu.mydemo.widget.AngularSpeedView
+        android:background="@android:color/darker_gray"
+        android:id="@+id/leftSpeed"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        app:type="left"
+        app:show_color="@android:color/holo_orange_light"/>
+
+    <com.liu.mydemo.widget.AngularSpeedView
+        android:layout_marginLeft="20dp"
+        android:id="@+id/rightSpeed"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@id/leftSpeed"
+        app:type="right"
+        app:show_color="@android:color/holo_green_light"/>
+
+    <Button
+        android:id="@+id/fangda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:text="放大" />
+
+    <Button
+        android:id="@+id/suoxiao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@+id/fangda"
+        android:text="缩小" />
+
+    <com.liu.mydemo.widget.PathView
+        android:id="@+id/pathView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/fangda"
+        android:layout_below="@+id/leftSpeed" />
+
+</RelativeLayout>
