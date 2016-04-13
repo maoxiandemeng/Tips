@@ -19,6 +19,7 @@ import com.liu.mydemo.ui.base.BaseCompatActivity;
 import com.liu.mydemo.ui.fragment.FunnyFragment;
 import com.liu.mydemo.ui.fragment.HotFragment;
 import com.liu.mydemo.ui.fragment.MusicFragment;
+import com.liu.mydemo.utils.StatusBarUtil;
 import com.liu.mydemo.view.MainView;
 
 import java.util.ArrayList;
@@ -55,6 +56,7 @@ public class MainActivity extends BaseCompatActivity implements NavigationView.O
                 this, mDrawerLayout, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawerLayout.setDrawerListener(toggle);
         toggle.syncState();
+        StatusBarUtil.setColorForDrawerLayout(this, mDrawerLayout, R.color.colorPrimaryDark);
         mNavView.setNavigationItemSelectedListener(this);
 
         mainPresenter = new MainPresenter();

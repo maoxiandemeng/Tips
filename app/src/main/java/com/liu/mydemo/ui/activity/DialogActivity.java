@@ -2,6 +2,7 @@ package com.liu.mydemo.ui.activity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
@@ -10,12 +11,13 @@ import android.widget.Toast;
 import com.liu.dialog.MaterialDialog;
 import com.liu.mydemo.R;
 import com.liu.mydemo.ui.base.BaseCompatActivity;
+import com.liu.mydemo.utils.StatusBarUtil;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class DialogActivity extends BaseCompatActivity {
+public class DialogActivity extends AppCompatActivity {
     @Bind(R.id.tool_bar)
     Toolbar mToolBar;
 
@@ -26,6 +28,7 @@ public class DialogActivity extends BaseCompatActivity {
         ButterKnife.bind(this);
         mToolBar.setTitle("Dialog");
         setSupportActionBar(mToolBar);
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimaryDark));
         mToolBar.setNavigationIcon(android.R.drawable.ic_menu_revert);
         mToolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

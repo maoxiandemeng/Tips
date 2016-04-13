@@ -9,6 +9,7 @@ import android.view.WindowManager;
 
 import com.liu.mydemo.R;
 import com.liu.mydemo.ui.base.BaseCompatActivity;
+import com.liu.mydemo.utils.StatusBarUtil;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -24,6 +25,7 @@ public class SnowActivity extends BaseCompatActivity {
         ButterKnife.bind(this);
         mToolbar.setTitle("雪花");
         setSupportActionBar(mToolbar);
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimaryDark));
         mToolbar.setNavigationIcon(android.R.drawable.ic_menu_revert);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

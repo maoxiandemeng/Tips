@@ -1,1 +1,1 @@
-include ':app', ':scanlibrary', ':refresh', ':dialog'
+include ':app', ':refresh', ':dialog', ':scan'

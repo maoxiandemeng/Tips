@@ -12,13 +12,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.jing.scan.CaptureActivity;
+import com.jing.scan.encode.Encoder;
 import com.liu.mydemo.R;
 import com.liu.mydemo.ui.base.BaseCompatActivity;
+import com.liu.mydemo.utils.StatusBarUtil;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import comliu.scanlibrary.CaptureActivity;
-import comliu.scanlibrary.encode.Encoder;
 
 public class ScanActivity extends BaseCompatActivity {
     @Bind(R.id.tool_bar)
@@ -45,6 +46,7 @@ public class ScanActivity extends BaseCompatActivity {
         ButterKnife.bind(this);
         mToolBar.setTitle("二维码");
         setSupportActionBar(mToolBar);
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimaryDark));
         // Navigation Icon 要設定在 setSupoortActionBar 才有作用
         // 否則會出現 back button
         mToolBar.setNavigationIcon(android.R.drawable.ic_menu_revert);
