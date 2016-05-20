@@ -6,11 +6,16 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.view.ActionProvider;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ShareActionProvider;
+import android.widget.Toast;
 
 import com.liu.mydemo.R;
 import com.liu.mydemo.presenter.MainPresenter;
@@ -62,6 +67,28 @@ public class MainActivity extends BaseCompatActivity implements NavigationView.O
         mainPresenter = new MainPresenter();
         mainPresenter.attachView(this);
         mainPresenter.loadData();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_main_menu, menu);
+        MenuItem item = menu.findItem(R.id.scan2);
+//        ActionProvider actionProvider = item.getActionProvider();
+//        ShareActionProvider provider = (ShareActionProvider) item.getActionProvider();
+//        provider.setShareIntent(getIntent());
+//        MenuProvider provider =  (MenuProvider)item.getActionProvider();
+//        provider.onCreateActionView();
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.scan2:
+                Toast.makeText(this, "onOptionsItemSelected", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
